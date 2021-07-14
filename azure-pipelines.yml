@@ -1,0 +1,22 @@
+trigger:
+  - develop
+  - master
+  - release
+
+pool:
+  vmImage: "ubuntu-latest"
+
+variables:
+  buildConfiguration: "Release"
+
+stages:
+  - stage: DEV
+    condition: eq(variables['Build.SourceBranchName'], 'develop')
+    displayName: "Release to Dev"
+    jobs:
+      - job: EchoHolaMundo
+        steps:
+          - script: |
+              echo "Hola Duber"
+            displayName: "Hola-Duber"
+
