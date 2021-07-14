@@ -24,8 +24,8 @@ stages:
 
           - script: |
               ls -la
-              mv $(enviromentProdFile.secureFilePath) src/enviroments/
-              ls -la src/enviroments/
+              mv $(enviromentProdFile.secureFilePath) src/environments/
+              ls -la src/environments/
 
           - task: NodeTool@0
             inputs:
