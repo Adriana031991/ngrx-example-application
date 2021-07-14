@@ -3,6 +3,7 @@
         "Configuracion de archivo pipeline",
         "fix secure file name",
         "Fix route files enviroment",
-        "Change Node Version 10.x to 14.x"
+        "Change Node Version 10.x to 14.x",
+        "Correccion de idiota"
     ]
 }
