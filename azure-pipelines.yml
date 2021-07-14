@@ -29,7 +29,7 @@ stages:
 
           - task: NodeTool@0
             inputs:
-              versionSpec: '10.x'
+              versionSpec: '14.x'
             displayName: 'Install Angular Cli With NodeJs'
 
           - script: |
