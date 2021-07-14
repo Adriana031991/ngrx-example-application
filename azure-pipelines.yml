@@ -23,8 +23,9 @@ stages:
               secureFile: 'environment-prod'
 
           - script: |
-              mv $(enviromentProdFile.secureFilePath) ./src/enviroments/
-              ls -la ./src/enviroments/
+              ls -la
+              mv $(enviromentProdFile.secureFilePath) src/enviroments/
+              ls -la src/enviroments/
 
           - task: NodeTool@0
             inputs:
