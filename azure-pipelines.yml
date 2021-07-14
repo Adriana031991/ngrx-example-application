@@ -14,9 +14,32 @@ stages:
     condition: eq(variables['Build.SourceBranchName'], 'develop')
     displayName: "Release to Dev"
     jobs:
-      - job: EchoHolaMundo
+      - job: Angular
         steps:
+          - task: DownloadSecureFile@1
+            name: enviromentProdFile
+            displayName: 'Download enviroment prod ts file'
+            inputs:
+              secureFile: 'enviroment.prod.ts'
+
           - script: |
-              echo "Hola Duber"
-            displayName: "Hola-Duber"
+              mv $(enviromentProdFile.secureFilePath) ./src/enviroments/
+              ls -la ./src/enviroments/
+
+          - task: NodeTool@0
+            inputs:
+              versionSpec: '10.x'
+            displayName: 'Install Angular Cli With NodeJs'
+
+          - script: |
+              npm install -g @angular/cli
+              ng config -g cli.warnings.versionMismatch false
+              npm install
+            displayName: 'npm install dependencies'
+
+          - script: |
+              ng build --configuration=production
+            displayName: 'Generate Build Dist for Develop Enviroment'
+
+
 
