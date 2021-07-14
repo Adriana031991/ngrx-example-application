@@ -46,7 +46,7 @@ stages:
 
           - task: SonarCloudPrepare@1
             inputs:
-              SonarCloud: 'ngrx-example-application'
+              SonarCloud: 'ngrx-example-sonar'
               organization: 'sofka-histore'
               scannerMode: 'CLI'
               configMode: 'file'
@@ -72,11 +72,6 @@ stages:
               archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.SourceBranchName)/$(Build.BuildId).zip'
               replaceExistingArchive: true
 
-          - task: PublishBuildArtifacts@2
-            inputs:
-              PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-              ArtifactName: 'publish'
-              publishLocation: 'Container'
 
 
 
