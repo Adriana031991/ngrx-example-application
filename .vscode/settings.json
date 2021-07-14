@@ -1,5 +1,6 @@
 {
     "conventionalCommits.scopes": [
-        "Configuracion de archivo pipeline"
+        "Configuracion de archivo pipeline",
+        "fix secure file name"
     ]
 }

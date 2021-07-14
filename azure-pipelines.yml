@@ -20,7 +20,7 @@ stages:
             name: enviromentProdFile
             displayName: 'Download enviroment prod ts file'
             inputs:
-              secureFile: 'enviroment.prod.ts'
+              secureFile: 'environment-prod'
 
           - script: |
               mv $(enviromentProdFile.secureFilePath) ./src/enviroments/
