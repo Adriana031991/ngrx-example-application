@@ -15,8 +15,10 @@ export class UsuarioComponent implements OnInit {
   usuario: Usuario | null = new Usuario(); /////preguntar por esta razon :c
 
 
-  constructor( private router: ActivatedRoute,
-                private store: Store<AppState>) { }
+  constructor(
+    private router: ActivatedRoute,
+    private store: Store<AppState>
+  ) { }
 
   ngOnInit(): void {
 

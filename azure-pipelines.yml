@@ -15,7 +15,9 @@ stages:
     displayName: "Release to Dev"
     jobs:
       - job: Angular
+
         steps:
+
           - task: DownloadSecureFile@1
             name: enviromentProdFile
             displayName: 'Download enviroment prod ts file'
@@ -41,6 +43,44 @@ stages:
           - script: |
               ng build --configuration=production
             displayName: 'Generate Build Dist for Develop Enviroment'
+
+          - task: SonarCloudPrepare@1
+            inputs:
+              SonarCloud: 'SonarNGRXExample'
+              organization: 'SofkAI'
+              scannerMode: 'CLI'
+              configMode: 'file'
+
+          - task: SonarCloudAnalyze@1
+
+          - task: SonarCloudPublish@1
+            inputs:
+              pollingTimeoutSec: '300'
+
+          - task: CopyFiles@2
+            inputs:
+              SourceFolder: '$(Build.SourcesDirectory)/dist/http-effects'
+              Content: '**'
+              TargetFolder: '$(Build.ArtifactStagingDirectory)/$(Build.SourceBranchName)'
+              CleanTargetFolder: true
+
+          - task: ArchiveFiles@2
+            inputs:
+              rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/$(Build.SourceBranchName)''
+              includeRootFolder: true
+              archiveType: 'zip'
+              archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.SourceBranchName)/$(Build.BuildId).zip'
+              replaceExistingArchive: true
+
+          - task: PublishBuildArtifacts@2
+            inputs:
+              PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+              ArtifactName: 'publish'
+              publishLocation: 'Container'
+
+
+
+
 
 
 
