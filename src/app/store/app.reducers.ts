@@ -5,8 +5,8 @@ import * as reducers from './reducers';
 
 
 export interface AppState {
-   usuarios: reducers.usuariosState,
-   usuario: reducers.usuarioState
+   usuarios: reducers.UsuariosState,
+   usuario: reducers.UsuarioState
 }
 
 

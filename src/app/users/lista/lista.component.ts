@@ -1,4 +1,3 @@
-import { UsuarioService } from './../../services/usuario.service';
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario.model';
 import { AppState } from 'src/app/store/app.reducers';
@@ -8,7 +7,7 @@ import { cargarUsuarios } from 'src/app/store/actions';
 @Component({
   selector: 'app-lista',
   templateUrl: './lista.component.html',
-  styleUrls: ['./lista.component.css']
+  styleUrls: []
 })
 export class ListaComponent implements OnInit {
 
@@ -17,8 +16,8 @@ export class ListaComponent implements OnInit {
   error: any;
 
 
-  constructor( private store: Store<AppState>,
-    // public usuarioService: UsuarioService
+  constructor( 
+    private store: Store<AppState>,
     ) { }
 
   ngOnInit() {
@@ -27,7 +26,6 @@ export class ListaComponent implements OnInit {
     this.loading = true;
     setTimeout(() => {
       this.store.select( 'usuarios' ).subscribe( ({users, loading, error}) => {
-        // console.log (this.loading);
         this.usuarios = users;
         this.loading = loading;
         this.error = error;
@@ -36,17 +34,6 @@ export class ListaComponent implements OnInit {
       this.store.dispatch( cargarUsuarios() );
     }, 1000)
 
-
-
-
-    // this.usuarioService.getUsers()
-    // .subscribe( data => {
-    //   console.log(data);
-    //   this.users = data;
-    // });
   }
-
-
-
 
 }

@@ -8,7 +8,7 @@ import { AppState } from 'src/app/store/app.reducers';
 @Component({
   selector: 'app-usuario',
   templateUrl: './usuario.component.html',
-  styleUrls: ['./usuario.component.css']
+  styleUrls: []
 })
 export class UsuarioComponent implements OnInit {
 

@@ -4,14 +4,11 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: []
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent  {
 
   constructor( private router: Router ) { }
-
-  ngOnInit(): void {
-  }
 
   irUsuario(id: string): void {
     if (!id) {return;}

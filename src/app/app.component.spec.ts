@@ -25,11 +25,19 @@ describe('AppComponent', () => {
     const app = fixture.componentInstance;
     expect(app.title).toEqual('http-effects');
   });
-
+  
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('http-effects app is running!');
+    // expect(compiled.querySelector('.content span').textContent).toContain('http-effects app is running!');
+    expect(compiled.querySelector('.content span')).toBeNull('http-effects app is running!');
+    // expect(app).toHaveBeenCalled();
+    
   });
+
+  // it('should render router-outlet'), () => {
+  //   const
+  // }
 });

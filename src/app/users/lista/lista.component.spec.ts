@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { provideMockStore } from '@ngrx/store/testing';
 import { ListaComponent } from './lista.component';
 
 describe('ListaComponent', () => {
@@ -8,7 +8,8 @@ describe('ListaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListaComponent ]
+      declarations: [ ListaComponent ],
+      providers: [provideMockStore({})],
     })
     .compileComponents();
   });

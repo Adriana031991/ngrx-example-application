@@ -4,7 +4,7 @@ import { Action, createReducer, on } from '@ngrx/store';
 import { Usuario } from 'src/app/models/usuario.model';
 import * as actions from '../actions';
 
-export interface usuarioState {
+export interface UsuarioState {
     id: string,
     user: Usuario ,
     loaded: boolean,
@@ -12,7 +12,7 @@ export interface usuarioState {
     error: any;
 }
 
-export const usuarioInitialState: usuarioState = {
+export const usuarioInitialState: UsuarioState = {
   id: '',
   user: {},
   loaded: false,
@@ -45,6 +45,6 @@ const _usuarioReducer = createReducer(usuarioInitialState,
 
 );
 
-export function usuarioReducer(state: usuarioState | undefined, action: Action) {
+export function usuarioReducer(state: UsuarioState | undefined, action: Action) {
     return _usuarioReducer(state, action);
 }

@@ -4,14 +4,14 @@ import { Action, createReducer, on } from '@ngrx/store';
 import { Usuario } from 'src/app/models/usuario.model';
 import * as actions from '../actions';
 
-export interface usuariosState {
+export interface UsuariosState {
     users: Usuario[],
     loaded: boolean,
     loading: boolean,
     error: any;
 }
 
-export const usuariosInitialState: usuariosState = {
+export const usuariosInitialState: UsuariosState = {
   users: [],
   loaded: false,
   loading: false,
@@ -42,6 +42,6 @@ const _usuariosReducer = createReducer(usuariosInitialState,
 
 );
 
-export function usuariosReducer(state: usuariosState | undefined, action: Action) {
+export function usuariosReducer(state: UsuariosState | undefined, action: Action) {
     return _usuariosReducer(state, action);
 }
