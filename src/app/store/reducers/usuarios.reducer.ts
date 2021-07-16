@@ -14,7 +14,7 @@ export interface UsuariosState {
 export const usuariosInitialState: UsuariosState = {
   users: [],
   loaded: false,
-  loading: false,
+  loading: false, 
   error: null
 }
 
