@@ -12,7 +12,7 @@ import { AppState } from 'src/app/store/app.reducers';
 })
 export class UsuarioComponent implements OnInit {
 
-  usuario: Usuario | null = new Usuario(); /////preguntar por esta razon :c
+  usuario: Usuario | null = new Usuario(); 
 
 
   constructor(
