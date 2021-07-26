@@ -1,7 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { ListaComponent } from './lista.component';
-
 
 describe('ListaComponent', () => {
   let component: ListaComponent;
@@ -33,9 +32,12 @@ describe('ListaComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ ListaComponent ],
       providers: [
-        provideMockStore({ initialState: { usuarios: usersInitialState }})]
+        provideMockStore({ initialState: { usuarios: usersInitialState }},
+        )
+      ],
       })
     .compileComponents();
+
     store = TestBed.inject(MockStore);
 
   });
@@ -44,41 +46,55 @@ describe('ListaComponent', () => {
     fixture = TestBed.createComponent(ListaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should usuarios lenght eq userInitialState.users.length', () => {
-    setTimeout(() => {
-      store.setState(usersInitialState);
-      const expected = usersInitialState.users.length;
-      const result = fixture.componentInstance.usuarios.length;
-      expect(expected).toEqual(result);
-    }, 3000)
-
-  });
-
   it('should loading be true', () => {
-
     expect(component.loading).toBeTruthy();
   });
 
-  it('should loading be false after selector subscribe get usuarios Info', () => {
-    setTimeout(() =>{
-      expect(component.loading).toEqual(false);
-    }, 1000)
-  });
+  it('should loading be false after selector subscribe get usuarios Info', fakeAsync(() => {
+    expect(component.loading).toBeTruthy();
+    component.ngOnInit();
+    tick(4000);
+    expect(component.loading).toBeFalsy();
 
-  it('should error be true when the URL is not valid', () => {
-    setTimeout(() =>{
-      const expected = usersInitialState.error;
-      const result = fixture.componentInstance.error
-      expect(expected).toEqual(result);
-    }, 1000)
-  });
+  }));
+
+  it('should set the variable listComponent', fakeAsync(() => {
+    tick();
+    expect(component.loading).toBeTruthy();
+    expect(component.error).toBeFalsy();
+    expect(component.usuarios).toBeTruthy();
+  }))
+
+  // it('should usuarios lenght eq userInitialState.users.length', () => {
+  //   setTimeout(() => {
+  //     store.setState(usersInitialState);
+  //     const expected = usersInitialState.users.length;
+  //     const result = fixture.componentInstance.usuarios.length;
+  //     expect(expected).toEqual(result);
+  //   }, 3000);
+  // });
+
+  // it('should loading be false after selector subscribe get usuarios Info', () => {
+  //   setTimeout(() =>{
+  //     expect(component.loading).toBeFalsy();
+  //   }, 1000)
+  // });
+
+
+  // it('should error be true when the URL is not valid', () => {
+  //   setTimeout(() =>{
+  //     const expected = usersInitialState.error;
+  //     const result = fixture.componentInstance.error
+  //     expect(expected).toEqual(result);
+  //   }, 1000)
+  // });
+
 
 
 });

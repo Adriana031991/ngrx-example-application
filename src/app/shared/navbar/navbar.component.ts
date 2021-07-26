@@ -11,8 +11,12 @@ export class NavbarComponent  {
   constructor( private router: Router ) { }
 
   irUsuario(id: string): void {
-    if (!id) {return;}
-    this.router.navigate(['/usuario', id])
+  //   if (!id) {return;}
+  //   this.router.navigate(['/usuario', id])
+
+  id && this.router.navigate(['/usuario', id])
   }
+
+
 
 }

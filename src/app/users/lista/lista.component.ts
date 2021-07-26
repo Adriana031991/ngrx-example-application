@@ -16,7 +16,7 @@ export class ListaComponent implements OnInit {
   error: any;
 
 
-  constructor( 
+  constructor(
     private store: Store<AppState>,
     ) { }
 

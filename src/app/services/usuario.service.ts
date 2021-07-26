@@ -21,7 +21,6 @@ export class UsuarioService {
   }
 
   getUserById( id: string ) {
-    // console.log(id);
     return this.http.get(`${ this.URL }/posts/${ id }`)
           .pipe(
             map( (resp:any)  => resp)
