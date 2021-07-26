@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { RouterTestingModule } from "@angular/router/testing";
 import { UsuarioComponent } from './usuario.component';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
@@ -20,9 +20,9 @@ describe('UsuarioComponent', () => {
       declarations: [ UsuarioComponent ],
       imports: [
         RouterTestingModule
-      ],  
+      ],
       providers: [
-        provideMockStore({ initialState: { usuario: userInitialState }}) 
+        provideMockStore({ initialState: { usuario: userInitialState }})
       ],
       }).compileComponents();
       store = TestBed.inject(MockStore);
@@ -38,4 +38,12 @@ describe('UsuarioComponent', () => {
     store.setState(userInitialState);
     expect(component).toBeTruthy();
   });
+
+
+  it('should set the variable listComponent', fakeAsync(() => {
+    component.ngOnInit();
+    tick();
+    expect(component.usuario).toBeTruthy();
+  }))
+
 });

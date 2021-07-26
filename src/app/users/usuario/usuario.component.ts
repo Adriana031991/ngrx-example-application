@@ -12,7 +12,7 @@ import { AppState } from 'src/app/store/app.reducers';
 })
 export class UsuarioComponent implements OnInit {
 
-  usuario: Usuario | null = new Usuario(); 
+  usuario: Usuario | null = new Usuario();
 
 
   constructor(
@@ -24,7 +24,6 @@ export class UsuarioComponent implements OnInit {
 
     this.store.select('usuario').subscribe( ({ user, loading, error }) => {
       this.usuario = user;
-      console.log ( this.usuario)
     });
 
 

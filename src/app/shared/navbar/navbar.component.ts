@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,9 +11,6 @@ export class NavbarComponent  {
   constructor( private router: Router ) { }
 
   irUsuario(id: string): void {
-  //   if (!id) {return;}
-  //   this.router.navigate(['/usuario', id])
-
   id && this.router.navigate(['/usuario', id])
   }
 
