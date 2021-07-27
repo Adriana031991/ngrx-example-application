@@ -44,6 +44,12 @@ stages:
               ng build --configuration=production
             displayName: 'Generate Build Dist for Develop Enviroment'
 
+          - script: |
+              npm test
+              ls -la ./coverage
+              pwd
+            displayName: 'Run unit tests'
+
           - task: SonarCloudPrepare@1
             inputs:
               SonarCloud: 'ngrx-example-sonar'
