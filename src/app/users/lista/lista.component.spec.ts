@@ -61,7 +61,6 @@ describe('ListaComponent', () => {
     component.ngOnInit();
     tick(4000);
     expect(component.loading).toBeFalsy();
-
   }));
 
   it('should set the variable listComponent', fakeAsync(() => {
