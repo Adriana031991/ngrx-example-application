@@ -40,5 +40,5 @@ describe('NavbarComponent', () => {
         spyOn(routerstub, 'navigate');
         component.irUsuario('id');
     });
-});
+  });
 });
