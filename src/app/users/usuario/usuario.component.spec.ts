@@ -7,6 +7,7 @@ describe('UsuarioComponent', () => {
   let component: UsuarioComponent;
   let fixture: ComponentFixture<UsuarioComponent>;
   let store: MockStore;
+  
   const userInitialState = {
     id: '',
     user: {},
