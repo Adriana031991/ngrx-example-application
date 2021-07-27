@@ -45,7 +45,7 @@ stages:
             displayName: 'Generate Build Dist for Develop Enviroment'
 
           - script: |
-              npm test
+              ng test --code-coverage
               ls -la ./coverage
               pwd
             displayName: 'Run unit tests'
