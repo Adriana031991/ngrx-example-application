@@ -46,7 +46,15 @@ describe('ListaComponent', () => {
     fixture = TestBed.createComponent(ListaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+
+    jasmine.clock().install();
+
   });
+
+  afterEach(function() {
+    jasmine.clock().uninstall();
+  });
+
 
   it('should create', () => {
     expect(component).toBeTruthy();
@@ -70,6 +78,8 @@ describe('ListaComponent', () => {
     expect(component.usuarios).toBeTruthy();
   }))
 
+
+  // -------///-------------------------
   it('should usuarios lenght eq userInitialState.users.length', () => {
     setTimeout(() => {
       store.setState(usersInitialState);

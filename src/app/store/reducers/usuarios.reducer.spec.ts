@@ -10,7 +10,7 @@ import { Usuario } from 'src/app/models/usuario.model';
 
 describe('UsuariosReducer', () => {
 
-  describe('estado devuelve la misma referencia cuando se supone que el reductor no debe manejar la acción (acción desconocida)', () => {
+  describe('return state default', () => {
     it('should return the default state', () => {
       const { usuariosInitialState } = fromReducer;
       const action = {
