@@ -70,29 +70,29 @@ describe('ListaComponent', () => {
     expect(component.usuarios).toBeTruthy();
   }))
 
-  // it('should usuarios lenght eq userInitialState.users.length', () => {
-  //   setTimeout(() => {
-  //     store.setState(usersInitialState);
-  //     const expected = usersInitialState.users.length;
-  //     const result = fixture.componentInstance.usuarios.length;
-  //     expect(expected).toEqual(result);
-  //   }, 3000);
-  // });
+  it('should usuarios lenght eq userInitialState.users.length', () => {
+    setTimeout(() => {
+      store.setState(usersInitialState);
+      const expected = usersInitialState.users.length;
+      const result = fixture.componentInstance.usuarios.length;
+      expect(expected).toEqual(result);
+    }, 3000);
+  });
 
-  // it('should loading be false after selector subscribe get usuarios Info', () => {
-  //   setTimeout(() =>{
-  //     expect(component.loading).toBeFalsy();
-  //   }, 1000)
-  // });
+  it('should loading be false after selector subscribe get usuarios Info', () => {
+    setTimeout(() =>{
+      expect(component.loading).toBeFalsy();
+    }, 1000)
+  });
 
 
-  // it('should error be true when the URL is not valid', () => {
-  //   setTimeout(() =>{
-  //     const expected = usersInitialState.error;
-  //     const result = fixture.componentInstance.error
-  //     expect(expected).toEqual(result);
-  //   }, 1000)
-  // });
+  it('should error be true when the URL is not valid', () => {
+    setTimeout(() =>{
+      const expected = usersInitialState.error;
+      const result = fixture.componentInstance.error
+      expect(expected).toEqual(result);
+    }, 1000)
+  });
 
 
 

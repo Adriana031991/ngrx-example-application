@@ -5,7 +5,6 @@ import { UsuarioService } from './usuario.service';
 describe('UsuarioService', () => {
   let service: UsuarioService;
   let httpMock: HttpTestingController;
-  // let httpClientSpy: { get: jasmine.Spy };
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -22,13 +21,7 @@ describe('UsuarioService', () => {
     httpMock= TestBed.inject(HttpTestingController);
   });
 
-  // beforeEach(() => {
-  //   httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
-  //   service = new UsuarioService(httpClientSpy as any);
-  // });
-
-
-  afterEach(() => {
+  afterAll(() => {
       httpMock.verify();
   });
 

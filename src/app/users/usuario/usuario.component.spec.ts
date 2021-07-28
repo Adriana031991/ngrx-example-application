@@ -2,15 +2,17 @@ import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testin
 import { RouterTestingModule } from "@angular/router/testing";
 import { UsuarioComponent } from './usuario.component';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
+import { Router } from '@angular/router';
 
 describe('UsuarioComponent', () => {
   let component: UsuarioComponent;
   let fixture: ComponentFixture<UsuarioComponent>;
   let store: MockStore;
-  
+  let router: Router;
+
   const userInitialState = {
     id: '',
-    user: {},
+    user: {'':''},
     loaded: false,
     loading: false,
     error: null
@@ -27,6 +29,7 @@ describe('UsuarioComponent', () => {
       ],
       }).compileComponents();
       store = TestBed.inject(MockStore);
+      router = TestBed.inject(Router)
   });
 
   beforeEach(() => {
@@ -41,7 +44,7 @@ describe('UsuarioComponent', () => {
   });
 
 
-  it('should set the variable listComponent', fakeAsync(() => {
+  it('should set the data usuario', fakeAsync(() => {
     component.ngOnInit();
     tick();
     expect(component.usuario).toBeTruthy();

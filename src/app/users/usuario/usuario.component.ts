@@ -26,7 +26,6 @@ export class UsuarioComponent implements OnInit {
       this.usuario = user;
     });
 
-
     this.router.params.subscribe( ({ id }) => {
 
       this.store.dispatch( cargarUsuario({ id }) );

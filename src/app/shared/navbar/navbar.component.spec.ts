@@ -6,7 +6,6 @@ import { NavbarComponent } from './navbar.component';
 describe('NavbarComponent', () => {
   let component: NavbarComponent;
   let fixture: ComponentFixture<NavbarComponent>;
-  // let router: Router;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -14,7 +13,6 @@ describe('NavbarComponent', () => {
       imports: [RouterTestingModule],
     })
     .compileComponents();
-    // router = TestBed.inject(Router)
   });
 
   beforeEach(() => {
@@ -26,13 +24,6 @@ describe('NavbarComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  // it('should navigate to usuario/id', () => {
-  //   const spy = spyOn((component as any).router, 'navigate');
-  //   component.irUsuario('id');
-  //   expect(spy).toHaveBeenCalledWith(['/usuario','id']);
-
-  // })
 
   describe('navigateExample', () => {
     it('navigate Example', () => {

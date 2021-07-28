@@ -103,5 +103,8 @@
       }
     }
   },
-  "defaultProject": "http-effects"
+  "defaultProject": "http-effects",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
