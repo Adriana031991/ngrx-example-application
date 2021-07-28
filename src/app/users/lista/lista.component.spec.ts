@@ -64,7 +64,7 @@ describe('ListaComponent', () => {
   }));
 
   it('should set the variable listComponent', fakeAsync(() => {
-    tick();
+    tick(4000);
     expect(component.loading).toBeTruthy();
     expect(component.error).toBeFalsy();
     expect(component.usuarios).toBeTruthy();

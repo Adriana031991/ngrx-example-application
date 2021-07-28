@@ -46,7 +46,7 @@ describe('UsuarioComponent', () => {
 
   it('should set the data usuario', fakeAsync(() => {
     component.ngOnInit();
-    tick();
+    tick(4000);
     expect(component.usuario).toBeTruthy();
   }))
 
