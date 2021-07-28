@@ -43,7 +43,7 @@ describe('UsuariosReducer', () => {
         {id: 1, userId: 1, title: 'hola', body: 'hola'},
         {id: 1, userId: 1, title: 'hola', body: 'hola'}
       ]
-      // Array<Usuario>
+
       const action = fromActions.cargarUsuariosSuccess(  { usuarios: usersInitialState } );
       const state = fromReducer.usuariosReducer(usuariosInitialState, action);
 
