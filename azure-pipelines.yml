@@ -78,10 +78,3 @@ stages:
               archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.SourceBranchName)/$(Build.BuildId).zip'
               replaceExistingArchive: true
 
-
-
-
-
-
-
-

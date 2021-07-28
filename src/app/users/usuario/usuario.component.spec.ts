@@ -54,6 +54,7 @@ describe('UsuarioComponent', () => {
     component.ngOnInit();
     tick(4000);
     expect(component.usuario).toBeTruthy();
+
   }))
 
 });
