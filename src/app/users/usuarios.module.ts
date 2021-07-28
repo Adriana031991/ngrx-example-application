@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { ListaComponent } from './lista/lista.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-
 
 @NgModule({
   declarations: [

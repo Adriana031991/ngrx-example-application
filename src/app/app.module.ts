@@ -1,7 +1,7 @@
 import { UsuariosModule } from './users/usuarios.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule} from '@angular/common/http';
 //rutas
 import { AppRoutingModule } from './app-routing.module';
 //modulos personalizados
