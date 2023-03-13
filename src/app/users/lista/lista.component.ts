@@ -12,7 +12,7 @@ import { cargarUsuarios } from 'src/app/store/actions';
 export class ListaComponent implements OnInit {
 
   usuarios: Usuario[] = [];
-  loading: boolean = false;
+  loading = false;
   error: any;
 
 
